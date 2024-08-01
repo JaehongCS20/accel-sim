@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+
+import torch
+
+a = torch.randn(128,128).cuda()
+
+b = torch.mm(a,a)
+print(b)

@@ -9,6 +9,60 @@
 #       ...
 # If you have a bunch of random benchmarks in random places, then a "suite" can be just one benchmark
 
+# pytorch test
+torch-mm:
+    exec_dir: "$GPUAPPS_ROOT/../python-exec/"
+    data_dirs: ""
+    execs:
+        - torch-mm:
+            - args:  
+              accel-sim-mem: 4G
+
+# GPT model traces
+gpt3-embd:
+    exec_dir: "$GPUAPPS_ROOT/../python-exec/"
+    data_dirs: ""
+    execs:
+        - gpt3-embd:
+            - args:  --n_embd 4096 --n_head 32
+              accel-sim-mem: 24G
+gpt3-ln:
+    exec_dir: "$GPUAPPS_ROOT/../python-exec/"
+    data_dirs: ""
+    execs:
+        - gpt3-ln:
+            - args:  --n_embd 4096 --n_head 32
+              accel-sim-mem: 24G
+gpt3-attn:
+    exec_dir: "$GPUAPPS_ROOT/../python-exec/"
+    data_dirs: ""
+    execs:
+        - gpt3-attn:
+            - args:  --n_embd 4096 --n_head 32
+              accel-sim-mem: 24G
+gpt3-proj:
+    exec_dir: "$GPUAPPS_ROOT/../python-exec/"
+    data_dirs: ""
+    execs:
+        - gpt3-proj:
+            - args:  --n_embd 4096 --n_head 32
+              accel-sim-mem: 24G
+gpt3-linear1:
+    exec_dir: "$GPUAPPS_ROOT/../python-exec/"
+    data_dirs: ""
+    execs:
+        - gpt3-linear1:
+            - args:  --n_embd 4096 --n_head 32
+              accel-sim-mem: 24G
+gpt3-linear2:
+    exec_dir: "$GPUAPPS_ROOT/../python-exec/"
+    data_dirs: ""
+    execs:
+        - gpt3-linear2:
+            - args:  --n_embd 4096 --n_head 32
+              accel-sim-mem: 24G
+
+
 # Rodinia 2.0 implemented with a pass/fail functional test
 rodinia_2.0-ft:
     exec_dir: "$GPUAPPS_ROOT/bin/$CUDA_VERSION/release/"
